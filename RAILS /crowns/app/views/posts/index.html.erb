@@ -1,0 +1,54 @@
+<div class= "image">
+<%= image_tag "DeathtoStock_NotStock.jpg", :width => "100%", :class => "img-responsive" %> 
+  <h1_1>Crowns
+<br>Over<br>Cotton</h1_1>
+       
+
+
+</div>
+
+<div class="jumbotron">
+ <h1>BLOG</h1>
+   </div>
+   
+
+  <div class="container">
+  <%= link_to 'New Blog', new_post_path, class: "btn btn-primary" %>
+
+  
+  
+ 
+
+<div class="jumbotron">
+
+ 
+<% @posts.each do |post| %>
+
+  
+   <em><h2><%= link_to  post.title %></h2></em>
+   <td><%=  post.text %></td>
+    <p>
+     <%= time_ago_in_words post.created_at %> ago
+
+   
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete', post_path(post),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+<% end %>
+</div.
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'bakebake'; // Required - Replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
